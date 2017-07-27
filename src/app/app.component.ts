@@ -2,33 +2,45 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Utils } from '../app/library/utils';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { HeroesPage } from '../pages/heroes/heroes';
+import { AddHeroPage } from '../pages/add-hero/add-hero';
+import { AddPhotoPage } from '../pages/add-photo/add-photo';
+import { FacebookLoginPage } from "../pages/facebook-login/facebook-login";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = HeroesPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any, icon: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public utils: Utils,
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      // { title: 'Home', component: HomePage },
+      { title: 'Heroes', component: HeroesPage, icon: 'contact' },
+      { title: 'Add Hero', component: AddHeroPage, icon: 'add-circle' },
+      { title: 'Add Photo', component: AddPhotoPage, icon: 'add-circle' },
+      { title: 'Facebook Login', component: FacebookLoginPage, icon: 'logo-facebook' },
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.utils.deployDevice();
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
