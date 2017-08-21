@@ -30,11 +30,11 @@ export class FacebookLoginPage {
 
   login() {
     this.fb.login()
-    .then((response) => {
-      this.response = response;
-      this.fb.api();
-    })
-    .catch(console.log);
+      .then((response) => {
+        this.response = response;
+        this.fb.api();
+      })
+      .catch(console.log);
   }
 
 }

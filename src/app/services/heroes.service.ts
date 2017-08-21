@@ -8,7 +8,7 @@ export class HeroesService {
   apiUrl: string;
 
   constructor(private httpRequests: HttpRequests) {
-    this.apiUrl = '/api/heroes';
+    this.apiUrl = '/api/students';
   }
 
   getHeroes(): Promise<Heroes[]> {

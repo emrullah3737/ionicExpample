@@ -20,12 +20,18 @@ import { HeroesPage } from '../pages/heroes/heroes';
 import { HeroDetailPage } from '../pages/hero-detail/hero-detail'
 import { AddHeroPage } from '../pages/add-hero/add-hero';
 import { UpdateHeroPage } from '../pages/update-hero/update-hero';
+import { AddPhotoPage } from "../pages/add-photo/add-photo";
+import { FacebookLoginPage } from "../pages/facebook-login/facebook-login";
+import { AudioPage } from '../pages/audio/audio';
+import { VideoPage } from "../pages/video/video";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AddPhotoPage } from "../pages/add-photo/add-photo";
-import { FacebookLoginPage } from "../pages/facebook-login/facebook-login";
 import { Facebook } from "@ionic-native/facebook";
+import { Media } from '@ionic-native/media';
+import { VideoCapturePlus } from '@ionic-native/video-capture-plus';
+import { VideoPlayer } from '@ionic-native/video-player';
+import { MediaCapture } from '@ionic-native/media-capture';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,8 @@ import { Facebook } from "@ionic-native/facebook";
     AddPhotoPage,
     UpdateHeroPage,
     FacebookLoginPage,
+    AudioPage,
+    VideoPage
   ],
   imports: [
     BrowserModule,
@@ -55,9 +63,15 @@ import { Facebook } from "@ionic-native/facebook";
     HeroDetailPage,
     AddHeroPage,
     UpdateHeroPage,
-    FacebookLoginPage
+    FacebookLoginPage,
+    AudioPage,
+    VideoPage
   ],
   providers: [
+    MediaCapture,
+    VideoPlayer,
+    VideoCapturePlus,
+    Media,
     Facebook,
     Camera,
     Utils,

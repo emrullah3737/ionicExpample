@@ -28,7 +28,7 @@ export class UpdateHeroPage {
   ) {
     this.myForm = this.fb.group({
       name: navParams.get('hero')['name'],
-      id: navParams.get('hero')['id']
+      number: navParams.get('hero')['number']
     });
   }
 

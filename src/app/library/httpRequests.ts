@@ -16,7 +16,7 @@ export class HttpRequests {
   }
 
   private setHost() {
-    this.host = 'http://192.168.1.46:8080';
+    this.host = 'http://18.220.70.93:8080';
   }
 
   private setHeader() {

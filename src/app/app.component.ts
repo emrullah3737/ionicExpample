@@ -8,6 +8,8 @@ import { HeroesPage } from '../pages/heroes/heroes';
 import { AddHeroPage } from '../pages/add-hero/add-hero';
 import { AddPhotoPage } from '../pages/add-photo/add-photo';
 import { FacebookLoginPage } from "../pages/facebook-login/facebook-login";
+import { AudioPage } from "../pages/audio/audio";
+import { VideoPage } from "../pages/video/video";
 
 @Component({
   templateUrl: 'app.html',
@@ -32,8 +34,10 @@ export class MyApp {
       // { title: 'Home', component: HomePage },
       { title: 'Heroes', component: HeroesPage, icon: 'contact' },
       { title: 'Add Hero', component: AddHeroPage, icon: 'add-circle' },
-      { title: 'Add Photo', component: AddPhotoPage, icon: 'add-circle' },
+      { title: 'Add Photo', component: AddPhotoPage, icon: 'camera' },
       { title: 'Facebook Login', component: FacebookLoginPage, icon: 'logo-facebook' },
+      { title: 'Audio', component: AudioPage, icon: 'volume-up' },
+      { title: 'Video', component: VideoPage, icon: 'videocam' },
     ];
 
   }
