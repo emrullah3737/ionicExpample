@@ -10,9 +10,7 @@ export class Utils {
     private deploy: Deploy,
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
-  ) {
-    console.log('Utils initialized');
-  }
+  ) {}
 
   deployDevice() {
     if (!this.platform.is('mobileweb') && !this.platform.is('core'))
@@ -74,4 +72,20 @@ export class Utils {
       }
     };
   }
+}
+
+
+export class UtilsMock extends Utils {
+  
+  constructor() {
+    let platform: Platform;
+    let deploy: Deploy;
+    let alertCtrl: AlertController;
+    let loadingCtrl: LoadingController;
+    super(platform, deploy, alertCtrl, loadingCtrl);
+  }
+  deployDevice() {
+    return true;
+  }
+  
 }

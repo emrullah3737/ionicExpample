@@ -4,28 +4,35 @@ import { HttpRequests } from '../library/httpRequests';
 
 @Injectable()
 export class HeroesService {
-  heroes: Heroes;
+  heroes: Array<Heroes>;
   apiUrl: string;
 
   constructor(private httpRequests: HttpRequests) {
-    this.apiUrl = '/api/students';
+    this.apiUrl = '/api/heroes';
   }
 
-  getHeroes(): Promise<Heroes[]> {
+  public getHeroes(): Promise<Heroes[]> {
     return this.httpRequests.fetch(this.apiUrl, { s: '-name' });
   }
 
-  addHero(body: Heroes): Promise<any> {
+  public addHero(body: Heroes): Promise<any> {
     return this.httpRequests.save(this.apiUrl, body);
   }
 
-  deleteHero(id: number): Promise<any> {
+  public deleteHero(id: number): Promise<any> {
     return this.httpRequests.destroy(this.apiUrl, id);
   }
 
-  updateHero(body: Heroes, _id: number): Promise<any> {
+  public updateHero(body: Heroes, _id: number): Promise<any> {
     body['_id'] = _id;
     return this.httpRequests.save(this.apiUrl, body);
   }
 
+}
+
+export class HeroesServiceMock extends HeroesService {
+  constructor() {
+    let httpRequests: HttpRequests;
+    super(httpRequests);
+  }
 }

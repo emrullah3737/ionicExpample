@@ -16,13 +16,13 @@ export class HttpRequests {
   }
 
   private setHost() {
-    this.host = 'http://18.220.70.93:8080';
+    this.host = 'http://127.0.0.1:8080';
   }
 
   private setHeader() {
     this.headers = new Headers({
-      'X-Client-Id': '594b88dc81f8c13c32c6737e',
-      'X-Client-Secret': '594b88dc81f8c13c32c67377'
+      'X-Client-Id': '123',
+      'X-Client-Secret': '123'
     });
   }
 
@@ -57,5 +57,12 @@ export class HttpRequests {
     return this.http.delete(this.host + `${apiUrl}/${id}`, { headers: this.headers })
       .map((data) => data.json())
       .toPromise();
+  }
+}
+
+export class HttpRequestMock extends HttpRequests{
+  constructor() {
+    let http: Http;
+    super(http);
   }
 }
