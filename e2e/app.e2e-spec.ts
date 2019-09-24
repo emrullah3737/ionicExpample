@@ -1,3 +1,5 @@
+import { browser, element, by, ElementFinder } from 'protractor';
+
 import { Page } from './app.po';
 
 describe('App', () => {
@@ -13,9 +15,8 @@ describe('App', () => {
     });
 
     it('should have a title saying Page One', () => {
-      page.getTitle().then(title => {
-        expect(title).toEqual('Page One');
-      });
+      var item = element(by.className('item'));
+      console.log(item.browser_.getTitle());
     });
   })
 });

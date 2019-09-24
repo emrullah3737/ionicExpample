@@ -19,11 +19,11 @@ export class HeroesService {
     return this.httpRequests.save(this.apiUrl, body);
   }
 
-  public deleteHero(id: number): Promise<any> {
+  public deleteHero(id: string): Promise<any> {
     return this.httpRequests.destroy(this.apiUrl, id);
   }
 
-  public updateHero(body: Heroes, _id: number): Promise<any> {
+  public updateHero(body: Heroes, _id: string): Promise<any> {
     body['_id'] = _id;
     return this.httpRequests.save(this.apiUrl, body);
   }

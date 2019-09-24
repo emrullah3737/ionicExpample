@@ -53,6 +53,7 @@ export class HeroesPage {
   }
 
   goDetail(hero: Heroes) {
+    console.log(hero);
     this.navCtrl.push(HeroDetailPage, {
       hero
     });

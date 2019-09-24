@@ -32,7 +32,6 @@ import { Media } from '@ionic-native/media';
 import { VideoCapturePlus } from '@ionic-native/video-capture-plus';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { MediaCapture } from '@ionic-native/media-capture';
-import { TestProvider } from '../providers/test/test';
 
 @NgModule({
   declarations: [
@@ -79,8 +78,7 @@ import { TestProvider } from '../providers/test/test';
     HttpRequests,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TestProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

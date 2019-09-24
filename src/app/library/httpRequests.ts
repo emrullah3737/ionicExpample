@@ -53,7 +53,7 @@ export class HttpRequests {
       .toPromise();
   }
 
-  public destroy(apiUrl: string, id: number): Promise<any> {
+  public destroy(apiUrl: string, id: string): Promise<any> {
     return this.http.delete(this.host + `${apiUrl}/${id}`, { headers: this.headers })
       .map((data) => data.json())
       .toPromise();
